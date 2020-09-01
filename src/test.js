@@ -1,45 +1,53 @@
 import React from 'react'
 import {Route, Link, HashRouter as Router} from 'react-router-dom';
 import axios from 'axios'
+import TestShow from "./TestShow";
+import TweetBox from "./TweetBox"
+
 const USERS_URL = 'http://localhost:3000/users'
+const POSTS_URL = 'http://localhost:3000/posts'
 
-function test() {
-    return (
-        <div>
-                  <h1>social media app</h1>
-          <h2>Lets have some fun!!</h2>
-        </div>
-    )
-}
 
-class UserList extends React.Component {
+
+class Test extends React.Component {
 
   state = {
-    Users: []
+    users: [],
+    posts: []
   };
 
   showUsers = () => {
-    axios.get(FLIGHTS_URL)
+    axios.get(USERS_URL)
     .then(response => {
       console.log(response.data);
-      this.setState({flights: response.data});
+      this.setState({users: response.data});
     })
     .catch(error => console.warn(error));
   }; // showUsers
 
+  showPosts = () => {
+    axios.get(POSTS_URL)
+    .then(response => {
+      console.log(response.data);
+      this.setState({posts: response.data});
+    })
+    .catch(error => console.warn(error));
+  };
+
   componentDidMount(){
     console.log('Loaded.');
     this.showUsers();
+    this.showPosts();
+
   } // componentDidMount()
 
   render() {
     return (
-      
-      <div>
 
-        <h1> <strong>User Details:</strong></h1>
-              <li key={item.id}><strong>Id:</strong> {item.id} | <strong>Flight number:</strong> {item.name}| <strong>Row:</strong> {item.row} |<strong> Column:</strong> {item.column}
-              </li>
+      <div>
+  <TweetBox />
+
+      <TestShow myUsers={this.state.users}  />
 
 
       </div>
@@ -48,4 +56,4 @@ class UserList extends React.Component {
 
 } // class Fli
 
-export default UserList;
+export default Test;

@@ -11,7 +11,14 @@ const Feed = () => {
 <h2>Home</h2>
         </div>
         <TweetBox />
-        <Post/>
+        <Post displayName="nemo"
+          username="ssss"
+          verified={true}
+          text="yooo its working"
+avatar="/images/avatar_sample.png"
+image="https://media.giphy.com/media/Y2hvJ47uJf6RuwhPyv/giphy.gif"
+          />
+
         </div>
     )
 }

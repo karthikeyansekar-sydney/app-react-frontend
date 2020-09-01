@@ -13,14 +13,15 @@ const Post = ({displayName,username,verified,text,image,avatar}) => {
          <div className="post__header">
            <div className="post__headerText">
              <h3>
-              Karthik{""}
+              {displayName}{""}
               <span>
-<VerifiedUserIcon className="post_badge" />
+{verified && <VerifiedUserIcon className="post_badge" />} @
+{username}
               </span>
              </h3>
            </div>
            <div className="post__headerDescription">
-             <p>jjjjbjjjhjkhkhkhklhkkhjjkhkjhkhkh</p>
+             <p>{text}</p>
            </div>
          </div>
          <img src="https://media.giphy.com/media/Y2hvJ47uJf6RuwhPyv/giphy.gif"/>
