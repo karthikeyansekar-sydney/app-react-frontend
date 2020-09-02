@@ -3,7 +3,8 @@ import "./Post.css";
 import { Avatar } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 
-const Post = ({displayName,username,verified,text,image,avatar}) => {
+const Post = (props) => {
+  console.log('post',props.postData);
     return (
         <div className="post">
           <div className="post_avatar">
@@ -13,15 +14,11 @@ const Post = ({displayName,username,verified,text,image,avatar}) => {
          <div className="post__header">
            <div className="post__headerText">
              <h3>
-              {displayName}{""}
-              <span>
-{verified && <VerifiedUserIcon className="post_badge" />} @
-{username}
-              </span>
+              {props.postData.user.name}
              </h3>
            </div>
            <div className="post__headerDescription">
-             <p>{text}</p>
+             <p>{props.postData.user_post}</p>
            </div>
          </div>
          <img src="https://media.giphy.com/media/Y2hvJ47uJf6RuwhPyv/giphy.gif"/>

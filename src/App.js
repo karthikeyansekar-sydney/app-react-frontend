@@ -4,13 +4,12 @@ import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Widgets from "./Widgets";
 import Test from "./Test";
+import LoginForm from './LoginForm';
 
 function App() {
   return (
     <div className="app">
-      <Sidebar />
-      <Test />
-      <Widgets />
+    <LoginForm />
     </div>
   );
 }

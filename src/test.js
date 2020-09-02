@@ -4,7 +4,6 @@ import axios from 'axios'
 import TestShow from "./TestShow";
 import TweetBox from "./TweetBox"
 
-const USERS_URL = 'http://localhost:3000/users'
 const POSTS_URL = 'http://localhost:3000/posts'
 
 
@@ -16,16 +15,8 @@ class Test extends React.Component {
     posts: []
   };
 
-  showUsers = () => {
-    axios.get(USERS_URL)
-    .then(response => {
-      console.log(response.data);
-      this.setState({users: response.data});
-    })
-    .catch(error => console.warn(error));
-  }; // showUsers
 
-  showPosts = () => {
+  fetchPosts = () => {
     axios.get(POSTS_URL)
     .then(response => {
       console.log(response.data);
@@ -36,8 +27,7 @@ class Test extends React.Component {
 
   componentDidMount(){
     console.log('Loaded.');
-    this.showUsers();
-    this.showPosts();
+    this.fetchPosts();
 
   } // componentDidMount()
 
@@ -47,7 +37,7 @@ class Test extends React.Component {
       <div>
   <TweetBox />
 
-      <TestShow myUsers={this.state.users}  />
+      <TestShow  myPosts={this.state.posts} />
 
 
       </div>

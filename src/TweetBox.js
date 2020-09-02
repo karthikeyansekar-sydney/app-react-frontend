@@ -8,16 +8,16 @@ const TweetBox = () => {
 <form>
 <div className="tweetBox_input">
 <Avatar src="/images/avatar_sample.png"/>
-<input placeholder="What's happening?"></input>
+<input placeholder="What's happening?" type="text"/>
 </div>
 <input className="tweetBox__imageInput"
           placeholder="Optional: Enter image URL"
           type="text"
         />
-<Button className="tweetBox_tweetButton">Tweet</Button>
+      <Button type="submit" className="tweetBox__tweetButton">Tweet</Button>
 </form>
         </div>
-    )
+    );
 }
 
-export default TweetBox
+export default TweetBox;
