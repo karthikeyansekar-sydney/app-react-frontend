@@ -31,9 +31,9 @@ export default class App extends React.Component {
       posts,
       post_photos,
       users,
-      likes,
-      dislikes,
-      comments
+      // likes,
+      // dislikes,
+      // comments
     });
   };
 
