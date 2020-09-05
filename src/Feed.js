@@ -4,7 +4,9 @@ import "./App.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import { getUserFromId } from './utils';
+import { fetchPosts, fetchUsers } from './api';
 
+// TODO : turn this into class component and in ComponentDidMount fetch the posts and the users and save them into state.
 const Feed = ({ posts, users }) => {
     return (
         <div className="feed">
